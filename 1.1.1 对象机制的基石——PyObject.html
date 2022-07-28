@@ -1,0 +1,566 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.1.1 对象机制的基石——PyObject · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="1.1.2 定长对象和变长对象.html" />
+    
+    
+    <link rel="prev" href="1.1 Python 内的对象.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="1 Python 对象初探.html">
+            
+                <a href="1 Python 对象初探.html">
+            
+                    
+                    1 Python 对象初探
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="1.1 Python 内的对象.html">
+            
+                <a href="1.1 Python 内的对象.html">
+            
+                    
+                    1.1 Python 内的对象
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1.1" data-path="1.1.1 对象机制的基石——PyObject.html">
+            
+                <a href="1.1.1 对象机制的基石——PyObject.html">
+            
+                    
+                    1.1.1 对象机制的基石——PyObject
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="1.1.2 定长对象和变长对象.html">
+            
+                <a href="1.1.2 定长对象和变长对象.html">
+            
+                    
+                    1.1.2 定长对象和变长对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="1.2 类型对象.html">
+            
+                <a href="1.2 类型对象.html">
+            
+                    
+                    1.2 类型对象
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="1.2.1 对象的创建.html">
+            
+                <a href="1.2.1 对象的创建.html">
+            
+                    
+                    1.2.1 对象的创建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="1.2.2 对象的行为.html">
+            
+                <a href="1.2.2 对象的行为.html">
+            
+                    
+                    1.2.2 对象的行为
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="1.2.3 类型的类型.html">
+            
+                <a href="1.2.3 类型的类型.html">
+            
+                    
+                    1.2.3 类型的类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="1.3 Python对象的多态性.html">
+            
+                <a href="1.3 Python对象的多态性.html">
+            
+                    
+                    1.3 Python对象的多态性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="1.4 引用计数.html">
+            
+                <a href="1.4 引用计数.html">
+            
+                    
+                    1.4 引用计数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2 Python 中的整数对象int.html">
+            
+                <a href="2 Python 中的整数对象int.html">
+            
+                    
+                    2 Python 中的整数对象int
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >1.1.1 对象机制的基石——PyObject</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>&#xFEFF;# 1.1.1 &#x5BF9;&#x8C61;&#x673A;&#x5236;&#x7684;&#x57FA;&#x77F3;&#x2014;&#x2014;PyObject</p>
+<h2 id="1111-pyobject">1.1.1.1 PyObject</h2>
+<p>&#x2003;&#x2003;&#x5728; Python &#x4E2D;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x4E1C;&#x897F;&#x90FD;&#x662F;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x6240;&#x6709;&#x7684;&#x5BF9;&#x8C61;&#x90FD;&#x62E5;&#x6709;&#x4E00;&#x4E9B;&#x76F8;&#x540C;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x8FD9;&#x4E9B;&#x5185;&#x5BB9;&#x5728; <code>PyObject</code> &#x4E2D;&#x5B9A;&#x4E49;&#xFF0C; <code>PyObject</code> &#x662F;&#x6574;&#x4E2A; Python &#x5BF9;&#x8C61;&#x673A;&#x5236;&#x7684;&#x6838;&#x5FC3;&#x3002;</p>
+<pre><code class="lang-c">[/Include/pytypedefs.h]
+<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> _object PyObject;
+</code></pre>
+<p>&#x2003;&#x2003;&#x5728; Python 3.12 &#x4E2D;&#xFF0C;<code>PyObject</code> &#x662F; <code>struct _object</code> &#x7684;&#x522B;&#x540D;&#xFF0C;&#x5728; C &#x8BED;&#x8A00;&#x4E2D;&#xFF0C;&#x5C06;&#x7ED3;&#x6784;&#x4F53;&#x53D6;&#x522B;&#x540D;&#x662F;&#x4E3A;&#x4E86;&#x5728;&#x521B;&#x5EFA;&#x8BE5;&#x7ED3;&#x6784;&#x4F53;&#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x7684;&#x65F6;&#x5019;&#x5B9E;&#x73B0;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x5F62;&#x5F0F;&#x3002;&#x4E0B;&#x9762;&#x4E24;&#x79CD;&#x5F62;&#x5F0F;&#x90FD;&#x662F;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; <code>_object</code> &#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4F7F;&#x7528; <code>PyObject</code> &#x66F4;&#x52A0;&#x76F4;&#x89C2;&#x3002; </p>
+<pre><code class="lang-c"><span class="hljs-keyword">struct</span> _object ob_a;
+PyObject ob_a;
+</code></pre>
+<h2 id="1112-object">1.1.1.2 _object</h2>
+<p>&#x2003;&#x2003;&#x90A3;&#x4E48;&#xFF0C;&#x7ED3;&#x6784;&#x4F53; <code>_object</code> &#x957F;&#x4EC0;&#x4E48;&#x6837;&#x5462;&#xFF1F;</p>
+<pre><code class="lang-c">[/Include/object.h]
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifdef</span> Py_TRACE_REFS</span>
+<span class="hljs-comment">/* Define pointers to support a doubly-linked list of all live heap objects. */</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> _PyObject_HEAD_EXTRA            \
+    PyObject *_ob_next;           \
+    PyObject *_ob_prev;</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> _PyObject_EXTRA_INIT _Py_NULL, _Py_NULL,</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">else</span></span>
+<span class="hljs-meta">#  <span class="hljs-meta-keyword">define</span> _PyObject_HEAD_EXTRA</span>
+<span class="hljs-meta">#  <span class="hljs-meta-keyword">define</span> _PyObject_EXTRA_INIT</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span>
+
+
+<span class="hljs-keyword">struct</span> _object {
+    _PyObject_HEAD_EXTRA
+    Py_ssize_t ob_refcnt;
+    PyTypeObject *ob_type;
+};
+</code></pre>
+<p>&#x2003;&#x2003;&#x5B8F;&#x5B9A;&#x4E49; <code>_PyObject_HEAD_EXTRA</code> &#x4EC5;&#x5728;&#x8BBE;&#x7F6E;&#x4E86;&#x73AF;&#x5883;&#x53D8;&#x91CF; <code>Py_TRACE_REFS</code> &#x65F6;&#xFF0C;&#x4F1A;&#x521B;&#x5EFA;&#x4E24;&#x4E2A; <code>PyObject *</code> &#x7C7B;&#x578B;&#x7684;&#x6307;&#x9488;&#xFF0C;&#x5B9E;&#x73B0; <code>PyObject</code> &#x7684;&#x53CC;&#x5411;&#x94FE;&#x8868;&#xFF0C;&#x7528;&#x4E8E; <code>debug</code> &#x6A21;&#x5F0F;&#x4E0B;&#x7684;&#x5F15;&#x7528;&#x8FFD;&#x8E2A;&#xFF0C;&#x8FD9;&#x91CC;&#x5148;&#x7565;&#x8FC7;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5173;&#x4E8E; <code>debug</code> &#x6A21;&#x5F0F;&#xFF0C;&#x8BE6;&#x89C1;  <a href="https://docs.python.org/3/using/configure.html?highlight=py_trace_refs#cmdoption-with-trace-refs" target="_blank">Python debug options --with-trace-refs</a></p>
+<p>&#x2003;&#x2003;&#x90A3;&#x4E48;&#xFF0C;&#x7ED3;&#x6784;&#x4F53; <code>_object</code> &#x5C31;&#x662F;&#x8FD9;&#x4E2A;&#x6837;&#x5B50;&#x4E86;&#x3002;</p>
+<pre><code class="lang-c">[/Include/object.h]
+<span class="hljs-keyword">struct</span> _object {
+    Py_ssize_t ob_refcnt;  <span class="hljs-comment">// &#x5F15;&#x7528;&#x8BA1;&#x6570;&#x5668;</span>
+    PyTypeObject *ob_type; <span class="hljs-comment">// &#x6307;&#x5411;&#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x7684;&#x6307;&#x9488;</span>
+};
+</code></pre>
+<p>&#x2003;&#x2003;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;Python &#x5BF9;&#x8C61;&#x7684;&#x57FA;&#x7C7B; <code>_object</code> &#x53EA;&#x5305;&#x542B;&#x4E86;&#x4E24;&#x4E2A;&#x57FA;&#x672C;&#x4FE1;&#x606F;&#xFF1A;&#x8FD9;&#x4E2A;&#x7C7B;&#x7684;&#x5F15;&#x7528;&#x8BA1;&#x6570; &#x548C; &#x6307;&#x5411;&#x76F8;&#x5E94;&#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x7684;&#x6307;&#x9488;&#x3002;</p>
+<h2 id="1113-pyssizet">1.1.1.3 Py_ssize_t</h2>
+<p>&#x2003;&#x2003;&#x5728; Python 2.4 &#x4E2D;&#xFF0C;&#x4F7F;&#x7528;&#x7684;&#x7D22;&#x5F15;&#x7C7B;&#x578B;&#x662F; int&#xFF0C;&#x8FD9;&#x5BFC;&#x81F4;&#x5728;64&#x4F4D;&#x673A;&#x5668;&#x4E0A;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x5B8C;&#x6574;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;<strong>PEP 353</strong>&#x5F15;&#x5165;&#x4E86;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;&#x7279;&#x5B9A;&#x5E73;&#x53F0;&#x7684;&#x7D22;&#x5F15;&#x7C7B;&#x578B;&#xFF0C;<code>Py_ssize_t</code> &#x7684;&#x5927;&#x5C0F;&#x4E0E;&#x7F16;&#x8BD1;&#x5668;&#x7684; <code>size_t</code> &#x7C7B;&#x578B;&#x76F8;&#x540C;&#xFF0C;&#x5982;&#x679C; <code>ssize_t</code> &#x5B58;&#x5728;&#xFF0C;<code>Py_ssize_t</code> &#x4F1A;&#x662F; <code>ssize_t</code> &#x7684;&#x522B;&#x540D;&#xFF0C;&#x5728;&#x5176;&#x4ED6;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F1A;&#x662F; <code>Py_intptr_t</code> &#x7684;&#x522B;&#x540D;&#xFF0C;&#x8FDB;&#x800C;&#x662F; <code>intptr_t</code> &#x7684;&#x522B;&#x540D;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;<code>Py_intptr_t</code> &#x548C; <code>Py_ssize_t</code> &#x4E0D;&#x662F;&#x7B49;&#x540C;&#x7684;&#xFF0C; <code>Py_intptr_t</code> &#x4E0E; <code>void *</code> &#x7684;&#x5927;&#x5C0F;&#x76F8;&#x540C;&#xFF0C;&#x800C; <code>Py_ssize_t</code> &#x4E0E; <code>size_t</code> &#x7684;&#x5927;&#x5C0F;&#x76F8;&#x540C;&#x3002;</p>
+<pre><code class="lang-c">[/Include/pyport.h]
+<span class="hljs-comment">/* uintptr_t is the C9X name for an unsigned integral type such that a          
+ * legitimate void* can be cast to uintptr_t and then back to void* again
+ * without loss of information.  Similarly for intptr_t, wrt a signed
+ * integral type.
+ */</span>
+<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">uintptr_t</span>       Py_uintptr_t;
+<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">intptr_t</span>        Py_intptr_t;
+
+<span class="hljs-comment">/* Py_ssize_t is a signed integral type such that sizeof(Py_ssize_t) ==
+ * sizeof(size_t).  C99 doesn&apos;t define such a thing directly (size_t is an
+ * unsigned integral type).  See PEP 353 for details.
+ * PY_SSIZE_T_MAX is the largest positive value of type Py_ssize_t.
+ */</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifdef</span> HAVE_PY_SSIZE_T</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">elif</span> HAVE_SSIZE_T</span>
+<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">ssize_t</span>         Py_ssize_t;
+<span class="hljs-meta">#   <span class="hljs-meta-keyword">define</span> PY_SSIZE_T_MAX SSIZE_MAX</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">elif</span> SIZEOF_VOID_P == SIZEOF_SIZE_T</span>
+<span class="hljs-keyword">typedef</span> Py_intptr_t     Py_ssize_t;
+<span class="hljs-meta">#   <span class="hljs-meta-keyword">define</span> PY_SSIZE_T_MAX INTPTR_MAX</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">else</span></span>
+<span class="hljs-meta">#   <span class="hljs-meta-keyword">error</span> <span class="hljs-string">&quot;Python needs a typedef for Py_ssize_t in pyport.h.&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span>
+</code></pre>
+<blockquote>
+<p>&#x8BE6;&#x89C1; <a href="https://peps.python.org/pep-0353/" target="_blank">PEP 353 &#x2013; Using ssize_t as the index type</a></p>
+</blockquote>
+<h2 id="1114-pytypeobject">1.1.1.4 PyTypeObject</h2>
+<blockquote>
+<p>&#x8BE6;&#x89C1; 1.2 &#x7C7B;&#x578B;&#x5BF9;&#x8C61;</p>
+<pre><code class="lang-c">[/Include/pytpyedefs.h]
+<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> _typeobject PyTypeObject;
+</code></pre>
+<p>&#x2003;&#x2003;&#x540C;&#x6837;&#x7684;&#xFF0C;<code>PyTypeObject</code> &#x662F; <code>struct _typeobject</code> &#x7684;&#x522B;&#x540D;&#xFF0C;&#x8FD9;&#x662F; Python&#x4E2D;&#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x7684;&#x57FA;&#x7C7B;&#x3002;</p>
+</blockquote>
+<p>&#x2003;&#x2003;&#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x7684;&#x5B9E;&#x73B0;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-c">[/Include/cpython/object.h]
+<span class="hljs-comment">// If this structure is modified, Doc/includes/typestruct.h should be updated</span>
+<span class="hljs-comment">// as well.</span>
+<span class="hljs-keyword">struct</span> _typeobject {
+    PyObject_VAR_HEAD
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *tp_name; <span class="hljs-comment">/* For printing, in format &quot;&lt;module&gt;.&lt;name&gt;&quot; */</span>
+    Py_ssize_t tp_basicsize, tp_itemsize; <span class="hljs-comment">/* For allocation */</span>
+
+    <span class="hljs-comment">/* Methods to implement standard operations */</span>
+
+    destructor tp_dealloc;
+    Py_ssize_t tp_vectorcall_offset;
+    getattrfunc tp_getattr;
+    setattrfunc tp_setattr;
+    PyAsyncMethods *tp_as_async; <span class="hljs-comment">/* formerly known as tp_compare (Python 2)
+                                    or tp_reserved (Python 3) */</span>
+    reprfunc tp_repr;
+
+    <span class="hljs-comment">/* Method suites for standard classes */</span>
+
+    PyNumberMethods *tp_as_number;
+    PySequenceMethods *tp_as_sequence;
+    PyMappingMethods *tp_as_mapping;
+
+    <span class="hljs-comment">/* More standard operations (here for binary compatibility) */</span>
+
+    hashfunc tp_hash;
+    ternaryfunc tp_call;
+    reprfunc tp_str;                                                            
+    getattrofunc tp_getattro;
+    setattrofunc tp_setattro;
+
+    <span class="hljs-comment">/* Functions to access object as input/output buffer */</span>
+    PyBufferProcs *tp_as_buffer;
+
+    <span class="hljs-comment">/* Flags to define presence of optional/expanded features */</span>
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> tp_flags;
+
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *tp_doc; <span class="hljs-comment">/* Documentation string */</span>
+
+    <span class="hljs-comment">/* Assigned meaning in release 2.0 */</span>
+    <span class="hljs-comment">/* call function for all accessible objects */</span>
+    traverseproc tp_traverse;
+
+    <span class="hljs-comment">/* delete references to contained objects */</span>
+    inquiry tp_clear;
+
+    <span class="hljs-comment">/* Assigned meaning in release 2.1 */</span>
+    <span class="hljs-comment">/* rich comparisons */</span>
+    richcmpfunc tp_richcompare;
+
+    <span class="hljs-comment">/* weak reference enabler */</span>
+    Py_ssize_t tp_weaklistoffset;
+
+    <span class="hljs-comment">/* Iterators */</span>
+    getiterfunc tp_iter;
+    iternextfunc tp_iternext;
+
+    <span class="hljs-comment">/* Attribute descriptor and subclassing stuff */</span>
+    PyMethodDef *tp_methods;
+    PyMemberDef *tp_members;
+    PyGetSetDef *tp_getset;
+    <span class="hljs-comment">// Strong reference on a heap type, borrowed reference on a static type</span>
+    PyTypeObject *tp_base;
+    PyObject *tp_dict;
+    descrgetfunc tp_descr_get;
+    descrsetfunc tp_descr_set;
+    Py_ssize_t tp_dictoffset;
+    initproc tp_init;
+    allocfunc tp_alloc;
+    newfunc tp_new;                                                             
+    freefunc tp_free; <span class="hljs-comment">/* Low-level free-memory routine */</span>
+    inquiry tp_is_gc; <span class="hljs-comment">/* For PyObject_IS_GC */</span>
+    PyObject *tp_bases;
+    PyObject *tp_mro; <span class="hljs-comment">/* method resolution order */</span>
+    PyObject *tp_cache;
+    PyObject *tp_subclasses;
+    PyObject *tp_weaklist;
+    destructor tp_del;
+
+    <span class="hljs-comment">/* Type attribute cache version tag. Added in version 2.6 */</span>
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> tp_version_tag;
+
+    destructor tp_finalize;
+    vectorcallfunc tp_vectorcall;
+};
+</code></pre>
+<p>&#x2003;&#x2003;&#x4E5F;&#x8BB8; Python &#x5BF9;&#x8C61;&#x7CFB;&#x7EDF;&#x4E2D;&#x6700;&#x91CD;&#x8981;&#x7684;&#x7ED3;&#x6784;&#x4E4B;&#x4E00;&#x5C31;&#x662F;&#x5B9A;&#x4E49;&#x65B0;&#x7C7B;&#x578B;&#x7684;&#x7ED3;&#x6784;: PyTypeObject &#x7ED3;&#x6784;&#x3002; &#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EFB;&#x4F55; PyObject<em>* &#x6216; PyType</em>* &#x51FD;&#x6570;&#x6765;&#x5904;&#x7406;&#xFF0C;&#x4F46;&#x4E0D;&#x80FD;&#x63D0;&#x4F9B;&#x5927;&#x591A;&#x6570; Python &#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6240;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x5185;&#x5BB9;&#x3002; &#x8FD9;&#x4E9B;&#x5BF9;&#x8C61;&#x662F;&#x5BF9;&#x8C61;&#x884C;&#x4E3A;&#x7684;&#x57FA;&#x7840;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x4EEC;&#x5BF9;&#x89E3;&#x91CA;&#x5668;&#x672C;&#x8EAB;&#x6216;&#x4EFB;&#x4F55;&#x5B9E;&#x73B0;&#x65B0;&#x7C7B;&#x578B;&#x7684;&#x6269;&#x5C55;&#x6A21;&#x5757;&#x90FD;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x4E0E;&#x5927;&#x591A;&#x6570;&#x6807;&#x51C6;&#x7C7B;&#x578B;&#x76F8;&#x6BD4;&#xFF0C;&#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x76F8;&#x5F53;&#x5927;&#x3002;&#x8FD9;&#x4E48;&#x5927;&#x7684;&#x539F;&#x56E0;&#x662F;&#x6BCF;&#x4E2A;&#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x5B58;&#x50A8;&#x4E86;&#x5927;&#x91CF;&#x7684;&#x503C;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x662F;C&#x51FD;&#x6570;&#x6307;&#x9488;&#xFF0C;&#x6BCF;&#x4E2A;&#x6307;&#x9488;&#x5B9E;&#x73B0;&#x4E86;&#x7C7B;&#x578B;&#x529F;&#x80FD;&#x7684;&#x4E00;&#x5C0F;&#x90E8;&#x5206;&#x3002;&#x672C;&#x8282;&#x5C06;&#x8BE6;&#x7EC6;&#x63CF;&#x8FF0;&#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x7684;&#x5B57;&#x6BB5;&#x3002;&#x8FD9;&#x4E9B;&#x5B57;&#x6BB5;&#x5C06;&#x6309;&#x7167;&#x5B83;&#x4EEC;&#x5728;&#x7ED3;&#x6784;&#x4E2D;&#x51FA;&#x73B0;&#x7684;&#x987A;&#x5E8F;&#x8FDB;&#x884C;&#x63CF;&#x8FF0;&#x3002;</p>
+<blockquote>
+<p><a href="https://docs.python.org/zh-cn/3/c-api/typeobj.html?highlight=pytypeobject" target="_blank">&#x7C7B;&#x578B;&#x5BF9;&#x8C61;</a></p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1.1 Python 内的对象.html" class="navigation navigation-prev " aria-label="Previous page: 1.1 Python 内的对象">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="1.1.2 定长对象和变长对象.html" class="navigation navigation-next " aria-label="Next page: 1.1.2 定长对象和变长对象">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.1.1 对象机制的基石——PyObject","level":"1.2.1.1","depth":3,"next":{"title":"1.1.2 定长对象和变长对象","level":"1.2.1.2","depth":3,"path":"1.1.2 定长对象和变长对象.md","ref":"1.1.2 定长对象和变长对象.md","articles":[]},"previous":{"title":"1.1 Python 内的对象","level":"1.2.1","depth":2,"path":"1.1 Python 内的对象.md","ref":"1.1 Python 内的对象.md","articles":[{"title":"1.1.1 对象机制的基石——PyObject","level":"1.2.1.1","depth":3,"path":"1.1.1 对象机制的基石——PyObject.md","ref":"1.1.1 对象机制的基石——PyObject.md","articles":[]},{"title":"1.1.2 定长对象和变长对象","level":"1.2.1.2","depth":3,"path":"1.1.2 定长对象和变长对象.md","ref":"1.1.2 定长对象和变长对象.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"1.1.1 对象机制的基石——PyObject.md","mtime":"2022-07-28T13:16:13.832Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-07-28T15:45:04.703Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

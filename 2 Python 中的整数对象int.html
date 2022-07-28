@@ -1,0 +1,437 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2 Python 中的整数对象int · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="1.4 引用计数.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="1 Python 对象初探.html">
+            
+                <a href="1 Python 对象初探.html">
+            
+                    
+                    1 Python 对象初探
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="1.1 Python 内的对象.html">
+            
+                <a href="1.1 Python 内的对象.html">
+            
+                    
+                    1.1 Python 内的对象
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="1.1.1 对象机制的基石——PyObject.html">
+            
+                <a href="1.1.1 对象机制的基石——PyObject.html">
+            
+                    
+                    1.1.1 对象机制的基石——PyObject
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="1.1.2 定长对象和变长对象.html">
+            
+                <a href="1.1.2 定长对象和变长对象.html">
+            
+                    
+                    1.1.2 定长对象和变长对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="1.2 类型对象.html">
+            
+                <a href="1.2 类型对象.html">
+            
+                    
+                    1.2 类型对象
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="1.2.1 对象的创建.html">
+            
+                <a href="1.2.1 对象的创建.html">
+            
+                    
+                    1.2.1 对象的创建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="1.2.2 对象的行为.html">
+            
+                <a href="1.2.2 对象的行为.html">
+            
+                    
+                    1.2.2 对象的行为
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="1.2.3 类型的类型.html">
+            
+                <a href="1.2.3 类型的类型.html">
+            
+                    
+                    1.2.3 类型的类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="1.3 Python对象的多态性.html">
+            
+                <a href="1.3 Python对象的多态性.html">
+            
+                    
+                    1.3 Python对象的多态性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="1.4 引用计数.html">
+            
+                <a href="1.4 引用计数.html">
+            
+                    
+                    1.4 引用计数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="2 Python 中的整数对象int.html">
+            
+                <a href="2 Python 中的整数对象int.html">
+            
+                    
+                    2 Python 中的整数对象int
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >2 Python 中的整数对象int</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>&#xFEFF;# 2. Python&#x4E2D;&#x7684;&#x6574;&#x6570;&#x7C7B;&#x578B;(int)
+&#x2003;&#x2003;Python &#x4E2D;&#x5B58;&#x5728;&#x4E09;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x6570;&#x5B57;&#x7C7B;&#x578B;: &#x6574;&#x6570;, &#x6D6E;&#x70B9;&#x6570; &#x548C; &#x590D;&#x6570;&#x3002; &#x6B64;&#x5916;&#xFF0C;&#x5E03;&#x5C14;&#x503C;&#x5C5E;&#x4E8E;&#x6574;&#x6570;&#x7684;&#x5B50;&#x7C7B;&#x578B;&#x3002; </p>
+<p>&#x2003;&#x2003;&#x6574;&#x6570;&#x5177;&#x6709;&#x65E0;&#x9650;&#x7684;&#x7CBE;&#x5EA6;&#x3002; </p>
+<p>&#x2003;&#x2003;&#x6D6E;&#x70B9;&#x6570;&#x901A;&#x5E38;&#x4F7F;&#x7528; C &#x4E2D;&#x7684; double &#x6765;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x590D;&#x6570;&#x5305;&#x542B;&#x5B9E;&#x90E8;&#x548C;&#x865A;&#x90E8;&#xFF0C;&#x5206;&#x522B;&#x4EE5;&#x4E00;&#x4E2A;&#x6D6E;&#x70B9;&#x6570;&#x8868;&#x793A;&#x3002;&#x8981;&#x4ECE;&#x4E00;&#x4E2A;&#x590D;&#x6570; z &#x4E2D;&#x63D0;&#x53D6;&#x8FD9;&#x4E24;&#x4E2A;&#x90E8;&#x5206;&#xFF0C;&#x53EF;&#x4F7F;&#x7528; <code>z.real</code> &#x548C; <code>z.imag</code>&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5148;&#x8BA8;&#x8BBA;&#x6700;&#x5E38;&#x4F7F;&#x7528;&#x5230;&#x7684;&#x6574;&#x6570;&#x7C7B;&#x578B;&#xFF0C;&#x5373; <code>int</code>&#x3002;&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;<code>int</code> &#x7C7B;&#x578B;&#x5BF9;&#x5E94;&#x5230;&#x6E90;&#x7801;&#x4E2D;&#x7684;&#x5173;&#x952E;&#x8BCD;&#x662F; <code>long</code> &#xFF08;&#x5728; C &#x4E2D;&#x7528; <code>long</code> &#x6765;&#x8868;&#x793A;&#x957F;&#x6574;&#x578B;&#xFF09; &#x800C;&#x4E0D;&#x662F; <code>int</code>&#x3002;</p>
+<p>&#x2003;&#x2003;<code>int</code> &#x7C7B;&#x578B;&#x7684;&#x7C7B;&#x578B;&#x662F; <code>type</code>&#xFF0C;<code>int</code> &#x7C7B;&#x7684;&#x57FA;&#x7C7B;&#x662F; <code>object</code>&#x3002;
+&#x2003;&#x2003;<code>int</code> &#x7C7B;&#x578B;&#x5BF9;&#x5E94;&#x7684;&#x5B9E;&#x4F8B;&#x662F; <code>PyLong_Type</code>&#x3002;
+&#x2003;&#x2003;<code>int</code> &#x7C7B;&#x578B;&#x5BF9;&#x5E94;&#x7684;&#x7ED3;&#x6784;&#x4F53;&#x662F; <code>PyLongObject</code>&#x3002;</p>
+<pre><code class="lang-python3">&gt;&gt;&gt; int
+&lt;class &apos;int&apos;&gt;
+&gt;&gt;&gt; int.__class__
+&lt;class &apos;type&apos;&gt;
+&gt;&gt;&gt; int.__base__
+&lt;class &apos;object&apos;&gt;
+</code></pre>
+<p>&#x2003;&#x2003;&#x5F53;&#x6211;&#x4EEC;&#x8BA8;&#x8BBA;&#x4E00;&#x4E2A; Python &#x4E2D;&#x7684;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x4F1A;&#x8003;&#x8651;&#x5B83;&#x662F;&#x5426;&#x53EF;&#x53D8;&#xFF0C;&#x5373;&#x533A;&#x5206;&#x4E3A;&#x201C;&#x53EF;&#x53D8;&#x5BF9;&#x8C61;&#x201D;&#x548C;&#x201C;&#x4E0D;&#x53EF;&#x53D8;&#x5BF9;&#x8C61;&#x201D;&#xFF0C;&#x4EE5;&#x53CA;&#x5B83;&#x7684;&#x957F;&#x5EA6;&#x662F;&#x5426;&#x53EF;&#x53D8;&#xFF0C;&#x5373;&#x533A;&#x5206;&#x4E3A;&#x201C;&#x5B9A;&#x957F;&#x5BF9;&#x8C61;&#x201D;&#x548C;&#x201C;&#x53D8;&#x957F;&#x5BF9;&#x8C61;&#x201D;&#x3002;<strong><code>int</code> &#x7C7B;&#x578B;&#x751F;&#x6210;&#x7684;&#x5BF9;&#x8C61;</strong>&#x662F;&#x201C;&#x4E0D;&#x53EF;&#x53D8;&#x201D;&#x201C;&#x53D8;&#x957F;&#x201D;&#x7684;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5148;&#x770B; <code>PyLongObject</code>&#xFF0C;<code>PyLongObject</code> &#x7684;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#x3002;</p>
+<pre><code class="lang-c">[/Include/pytypedefs.h]
+<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> _longobject PyLongObject;
+
+[/Include/cpython/longintrepr.h]
+<span class="hljs-keyword">struct</span> _longobject {
+    PyObject_VAR_HEAD
+    digit ob_digit[<span class="hljs-number">1</span>];
+};
+</code></pre>
+<p>&#x2003;&#x2003;&#x5C06;&#x4E24;&#x6BB5;&#x5408;&#x5E76;&#xFF0C;&#x5E76;&#x5C55;&#x5F00;&#x5176;&#x4E2D;&#x7684;&#x5B8F;&#xFF0C;&#x5F97;&#x5230;&#xFF1A;</p>
+<pre><code class="lang-c"><span class="hljs-keyword">struct</span> _longobject {
+    <span class="hljs-keyword">struct</span> {
+        <span class="hljs-keyword">struct</span> _object {
+            Py_ssize_t ob_refcnt;
+            PyTypeObject *ob_type;
+        } ob_base;
+        Py_ssize_t ob_size; <span class="hljs-comment">/* Number of items in variable part */</span>
+    } ob_base;
+
+    digit ob_digit[<span class="hljs-number">1</span>];
+}PyLongObject;
+</code></pre>
+<p>&#x2003;&#x2003;&#x5148;&#x5FFD;&#x7565;&#x5176;&#x4E2D;&#x7684;&#x7ED3;&#x6784;&#x4F53;&#x5D4C;&#x5957;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x5F97;&#x5230;&#xFF1A;</p>
+<pre><code class="lang-c"><span class="hljs-keyword">struct</span> _longobject {
+    Py_ssize_t ob_refcnt;
+    PyTypeObject *ob_type;
+       Py_ssize_t ob_size; <span class="hljs-comment">/* Number of items in variable part */</span>
+    digit ob_digit[<span class="hljs-number">1</span>];
+}PyLongObject;
+</code></pre>
+<p>&#x2003;&#x2003;&#x4E00;&#x5171;4&#x4E2A;&#x5B57;&#x6BB5;&#xFF0C;&#x524D;3&#x4E2A;&#x5B57;&#x6BB5;&#x6765;&#x81EA;&#x7236;&#x7C7B; <code>PyVarObject</code>&#xFF0C;&#x90A3;&#x4E48;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;&#x663E;&#x7136;&#x5C31;&#x662F;&#x7528;&#x6765;&#x5B58;&#x50A8; <code>PyLongObject</code> &#x5BF9;&#x8C61;&#x7684;&#x503C;&#x4E86;&#x3002;</p>
+<p>XXX: &#x89E3;&#x91CA; digit&#xFF0C;&#x89E3;&#x91CA; ob_digit&#x6269;&#x5BB9;&#x3001;&#x5B58;&#x50A8;&#xFF08;30&#x4F4D;&#x6709;&#x6548;&#x6570;&#x5B57;&#xFF09;&#xFF0C;&#x89E3;&#x91CA;&#x8D1F;&#x6570;&#xFF0C;&#x89E3;&#x91CA; 0 &#x7684;&#x957F;&#x5EA6;&#x662F; 24&#x800C; 1&#x7684;&#x957F;&#x5EA6;&#x662F; 28&#xFF08;&#x5373;&#x7279;&#x4F8B;0&#xFF09;</p>
+<blockquote>
+<p>&#x2003;&#x2003;&#x5982;&#x679C;&#x4F60;&#x559C;&#x6B22;&#x8003;&#x7A76;&#x7684;&#x8BDD;&#xFF0C;&#x4F60;&#x4F1A;&#x53D1;&#x73B0;&#x5728; Python2 &#x4E2D;&#xFF0C;&#x540C;&#x65F6;&#x5B58;&#x5728;&#x7740; <code>PyIntObject</code> &#x548C; <code>PyLongObject</code> &#x4E24;&#x79CD;&#x7C7B;&#x578B;&#xFF0C;&#x524D;&#x8005;&#x6240;&#x751F;&#x6210;&#x7684;&#x5BF9;&#x8C61;&#x662F;&#x4E0D;&#x53EF;&#x53D8;&#x957F;&#x5EA6;&#x7684;&#xFF0C;&#x53D7;&#x9650;&#x4E8E;&#x5177;&#x4F53;&#x7684;&#x7CFB;&#x7EDF;&#xFF0C;&#x5728;&#x8DE8;&#x5E73;&#x53F0;&#x65F6;&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x9519;&#x3002;&#x800C;&#x540E;&#x8005;&#x66F4;&#x50CF;&#x5982;&#x4ECA;&#x7684; <code>PyLongObject</code>&#xFF0C;&#x662F;&#x53EF;&#x53D8;&#x957F;&#x5EA6;&#x7684;&#xFF0C;&#x4EC5;&#x53D7;&#x9650;&#x4E8E;&#x5185;&#x5B58;&#x3002;&#x5177;&#x4F53;&#x53EF;&#x67E5;&#x770B; <a href="https://peps.python.org/pep-0237/" target="_blank">PEP 237 &#x2013; Unifying Long Integers and Integers</a></p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1.4 引用计数.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 1.4 引用计数">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2 Python 中的整数对象int","level":"1.3","depth":1,"previous":{"title":"1.4 引用计数","level":"1.2.4","depth":2,"path":"1.4 引用计数.md","ref":"1.4 引用计数.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2 Python 中的整数对象int.md","mtime":"2022-07-28T13:43:51.378Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-07-28T15:45:04.703Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

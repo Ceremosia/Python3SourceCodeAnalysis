@@ -1,0 +1,484 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.2.2 对象的行为 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="1.2.3 类型的类型.html" />
+    
+    
+    <link rel="prev" href="1.2.1 对象的创建.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="1 Python 对象初探.html">
+            
+                <a href="1 Python 对象初探.html">
+            
+                    
+                    1 Python 对象初探
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="1.1 Python 内的对象.html">
+            
+                <a href="1.1 Python 内的对象.html">
+            
+                    
+                    1.1 Python 内的对象
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="1.1.1 对象机制的基石——PyObject.html">
+            
+                <a href="1.1.1 对象机制的基石——PyObject.html">
+            
+                    
+                    1.1.1 对象机制的基石——PyObject
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="1.1.2 定长对象和变长对象.html">
+            
+                <a href="1.1.2 定长对象和变长对象.html">
+            
+                    
+                    1.1.2 定长对象和变长对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="1.2 类型对象.html">
+            
+                <a href="1.2 类型对象.html">
+            
+                    
+                    1.2 类型对象
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="1.2.1 对象的创建.html">
+            
+                <a href="1.2.1 对象的创建.html">
+            
+                    
+                    1.2.1 对象的创建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2.2" data-path="1.2.2 对象的行为.html">
+            
+                <a href="1.2.2 对象的行为.html">
+            
+                    
+                    1.2.2 对象的行为
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="1.2.3 类型的类型.html">
+            
+                <a href="1.2.3 类型的类型.html">
+            
+                    
+                    1.2.3 类型的类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="1.3 Python对象的多态性.html">
+            
+                <a href="1.3 Python对象的多态性.html">
+            
+                    
+                    1.3 Python对象的多态性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="1.4 引用计数.html">
+            
+                <a href="1.4 引用计数.html">
+            
+                    
+                    1.4 引用计数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2 Python 中的整数对象int.html">
+            
+                <a href="2 Python 中的整数对象int.html">
+            
+                    
+                    2 Python 中的整数对象int
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >1.2.2 对象的行为</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>&#xFEFF;# 1.2.2 &#x5BF9;&#x8C61;&#x7684;&#x884C;&#x4E3A;
+&#x2003;&#x2003;&#x5728; <code>PyTypeObject</code> &#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x5927;&#x91CF;&#x7684;&#x51FD;&#x6570;&#x6307;&#x9488;&#xFF0C;&#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#x6307;&#x9488;&#x6700;&#x7EC8;&#x90FD;&#x4F1A;&#x6307;&#x5411;&#x67D0;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x6216;&#x8005;&#x6307;&#x5411; NULL &#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#x6307;&#x9488;&#x53EF;&#x4EE5;&#x89C6;&#x4E3A;&#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x4E2D;&#x6240;&#x5B9A;&#x4E49;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x800C;&#x8FD9;&#x4E9B;&#x6A7E;&#x4F5C;&#x76F4;&#x63A5;&#x51B3;&#x5B9A;&#x7740;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x6240;&#x8868;&#x73B0;&#x51FA;&#x7684;&#x884C;&#x4E3A;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x6BD4;&#x5982;&#x5982; <code>PyTypeObject</code> &#x4E2D;&#x7684; <code>tp_hash</code> &#x6307;&#x660E;&#x5BF9;&#x4E8E;&#x8BE5;&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5982;&#x4F55;&#x751F;&#x6210;&#x5176; hash &#x503C;&#x3002;&#x6211;&#x4EEC;&#x770B;&#x5230; <code>tp_hash</code> &#x662F;&#x4E00;&#x4E2A; <code>hashfunc</code> &#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x5728; <code>object.h</code> &#x4E2D;&#xFF0C;<code>hashfunc</code> &#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x6307;&#x9488;&#xFF1A; <code>typedef Py_hash_t (*hashfunc)(PyObject *);</code>&#x3002; </p>
+<p>&#x2003;&#x2003;&#x5728;&#x521B;&#x5EFA;&#x6574;&#x6570;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x4F1A;&#x8C03;&#x7528; <code>PyLong_Type</code> &#x4E2D;&#x7684; <code>tp_new</code>&#xFF0C;&#x5982;&#x679C;&#x8FD9;&#x4E2A; <code>tp_new</code> &#x4E3A; NULL&#xFF08;&#x771F;&#x6B63;&#x7684; <code>PyLong_Type</code> &#x4E2D;&#x7684; <code>tp_new</code> &#x5E76;&#x4E0D;&#x4E3A; NULL&#xFF0C;&#x6211;&#x4EEC;&#x8FD9;&#x91CC;&#x53EA;&#x662F;&#x4E3E;&#x4F8B;&#x8BF4;&#x660E; <code>tp_new</code> &#x4E3A; NULL &#x7684;&#x60C5;&#x51B5;&#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#x4F1A;&#x5230; <code>tp_base</code> &#x6307;&#x5B9A;&#x7684;&#x57FA;&#x7C7B;&#x4E2D;&#x53BB;&#x5BFB;&#x627E; <code>tp_new</code> &#x64CD;&#x4F5C;&#xFF0C;<code>PyBaseObject_Type</code>&#x7684; <code>tp_new</code> &#x6307;&#x5411;&#x4E86; <code>object_new</code>&#x3002;&#x5728; Python &#x4E2D;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x7C7B;&#x90FD;&#x662F;&#x4EE5; <code>PyObject</code> &#x4E3A;&#x57FA;&#x7C7B;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6700;&#x7EC8;&#x4F1A;&#x627E;&#x5230;&#x4E00;&#x4E2A;&#x4E0D;&#x4E3A; NULL &#x7684; <code>tp_new</code> &#x3002;&#x8FDB;&#x800C;&#x5B8C;&#x6210;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x540E;&#xFF0C;&#x6D41;&#x7A0B;&#x4F1A;&#x8F6C;&#x5411; <code>tp_init</code>&#xFF0C;&#x5B8C;&#x6210;&#x201C;&#x521D;&#x59CB;&#x5316;&#x5BF9;&#x8C61;&#x201D;&#x7684;&#x5DE5;&#x4F5C;&#xFF0C;<code>tp_init</code> &#x7684;&#x8C03;&#x7528;&#x6D41;&#x7A0B;&#x548C; <code>tp_new</code> &#x76F8;&#x4F3C;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5BF9;&#x5E94;&#x5230; C++ &#x4E2D;&#xFF0C; <code>tp_new</code> &#x53EF;&#x4EE5;&#x89C6;&#x4E3A; <code>new</code> &#x64CD;&#x4F5C;&#x7B26;&#xFF0C;&#x800C; <code>tp_init</code> &#x5219;&#x53EF;&#x89C6;&#x4E3A;&#x7C7B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x9700;&#x8981;&#x7279;&#x522B;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x8FD9;&#x91CC;&#x53EA;&#x662F;&#x4EE5;&#x6574;&#x6570;&#x5BF9;&#x8C61;&#x4E3A;&#x4F8B;&#xFF0C;&#x8BF4;&#x660E;&#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x5728;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x4F5C;&#x7528;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x4ECE;&#x4E0B;&#x4E00;&#x7AE0;&#x7684;&#x5206;&#x6790;&#x4E2D;&#x5C06;&#x4F1A;&#x770B;&#x5230;&#xFF0C;&#x4F5C;&#x4E3A; Python &#x5185;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x6574;&#x6570;&#x5BF9;&#x8C61;&#x5728;&#x521B;&#x5EFA;&#x65F6;&#x662F;&#x6709;&#x4E00;&#x4E9B;&#x4E0D;&#x540C;&#x7684;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5728; <code>PyTypeObject</code> &#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x4E0D;&#x540C;&#x7684;&#x64CD;&#x4F5C;&#x4FE1;&#x606F;&#x4E5F;&#x6B63;&#x662F;&#x4E00;&#x79CD;&#x5BF9;&#x8C61;&#x533A;&#x522B;&#x4E8E;&#x53E6;&#x4E00;&#x79CD;&#x5BF9;&#x8C61;&#x7684;&#x5173;&#x952E;&#x6240;&#x5728;&#x3002;&#x5728;&#x8FD9;&#x4E9B;&#x64CD;&#x4F5C;&#x4FE1;&#x606F;&#x4E2D;&#xFF0C; &#x6709;&#x4E09;&#x7EC4;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x64CD;&#x4F5C;&#x65CF;&#xFF0C; &#x5728; <code>PyTypeObject</code> &#x4E2D;&#xFF0C;&#x5B83;&#x4EEC;&#x662F; <code>tp_as_number</code>&#x3001;<code>tp_as_sequence</code> &#x3001;<code>tp_as_mapping</code>&#x3002;&#x5B83;&#x4EEC;&#x5206;&#x522B;&#x6307;&#x5411; <code>PyNumberMethods</code> &#x3001;<code>PySequenceMethods</code> &#x548C; <code>PyMappingMethods</code> &#x51FD;&#x6570;&#x65CF;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x4E00;&#x770B; <code>PyNurnberMethods</code> &#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x65CF;&#xFF1A;</p>
+<pre><code class="lang-c">[/Include/cpython/object.h]
+<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> {
+    <span class="hljs-comment">/* Number implementations must check *both*
+       arguments for proper type and implement the necessary conversions
+       in the slot functions themselves. */</span>
+
+    binaryfunc nb_add;
+    binaryfunc nb_subtract;
+    binaryfunc nb_multiply;
+    binaryfunc nb_remainder;
+    binaryfunc nb_divmod;
+    ternaryfunc nb_power;
+    unaryfunc nb_negative;
+    unaryfunc nb_positive;
+
+    unaryfunc nb_absolute;
+    inquiry nb_bool;
+    unaryfunc nb_invert;
+    binaryfunc nb_lshift;
+    binaryfunc nb_rshift;
+    binaryfunc nb_and;                                                          
+    binaryfunc nb_xor;
+    binaryfunc nb_or;
+    unaryfunc nb_int;
+    <span class="hljs-keyword">void</span> *nb_reserved;  <span class="hljs-comment">/* the slot formerly known as nb_long */</span>
+    unaryfunc nb_float;
+
+    binaryfunc nb_inplace_add;
+    binaryfunc nb_inplace_subtract;
+    binaryfunc nb_inplace_multiply;
+    binaryfunc nb_inplace_remainder;
+    ternaryfunc nb_inplace_power;
+    binaryfunc nb_inplace_lshift;
+    binaryfunc nb_inplace_rshift;
+    binaryfunc nb_inplace_and;
+    binaryfunc nb_inplace_xor;
+    binaryfunc nb_inplace_or;
+
+    binaryfunc nb_floor_divide;
+    binaryfunc nb_true_divide;
+    binaryfunc nb_inplace_floor_divide;
+    binaryfunc nb_inplace_true_divide;
+
+    unaryfunc nb_index;
+
+    binaryfunc nb_matrix_multiply;
+    binaryfunc nb_inplace_matrix_multiply;
+} PyNumberMethods;
+</code></pre>
+<p>&#x2003;&#x2003;&#x5728; <code>PyNumberMethods</code> &#x4E2D;&#xFF0C;&#x5B9A;&#x4E49;&#x4E86;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x6570;&#x503C;&#x5BF9;&#x8C61;&#x5E94;&#x8BE5;&#x652F;&#x6301;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x80FD;&#x88AB;&#x89C6;&#x4E3A;&#x6570;&#x503C;&#x5BF9;&#x8C61;&#xFF0C;&#x90A3;&#x4E48;&#x5728;&#x5176;&#x5BF9;&#x5E94;&#x7684;&#x7C7B;&#x578B;&#x5BF9;&#x8C61; <code>PyLong_Type</code> &#x4E2D;&#xFF0C;<code>tp_as_number.nb_add</code>  &#x5C31;&#x6307;&#x5B9A;&#x4E86;&#x5BF9;&#x8BE5;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x52A0;&#x6CD5;&#x64CD;&#x4EF5;&#x65F6;&#x7684;&#x5177;&#x4F53;&#x884C;&#x4E3A;&#x3002;&#x540C;&#x6837;&#xFF0C;<code>PySequenceMethods</code> &#x548C; <code>PyMappingMethods</code> &#x4E2D; &#x5206;&#x522B;&#x5B9A;&#x4E49;&#x4E86;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5E8F;&#x5217;&#x5BF9;&#x8C61;&#x548C;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#xFF0C;&#x5E94;&#x8BE5;&#x652F;&#x6301;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x8FD9;&#x4E24;&#x79CD;&#x5BF9;&#x8C61;&#x7684;&#x5178;&#x578B;&#x4F8B;&#x5B50;&#x662F; <code>list</code> &#x548C; <code>dict</code>&#x3002;</p>
+<pre><code class="lang-c">[/Objects/longobject.c]
+PyTypeObject PyLong_Type = {
+    ...
+    &amp;long_as_number,                            <span class="hljs-comment">/* tp_as_number */</span>                                                       
+    ...
+}
+
+<span class="hljs-keyword">static</span> PyNumberMethods long_as_number = {
+    (binaryfunc)long_add,       <span class="hljs-comment">/*nb_add*/</span>
+    ...
+}
+</code></pre>
+<p>&#x2003;&#x2003;&#x5BF9;&#x4E8E;&#x4E00;&#x79CD;&#x7C7B;&#x578B;&#x6765;&#x8BF4;&#xFF0C;&#x5B83;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x5B9A;&#x4E49;&#x4E09;&#x4E2A;&#x51FD;&#x6570;&#x65CF;&#x4E2D;&#x7684;&#x6240; &#x6709;&#x64CD;&#x4F5C;&#x3002;&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x65E2;&#x8868;&#x73B0;&#x51FA;&#x6570;&#x503C;&#x5BF9;&#x8C61;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x540C;&#x65F6;&#x8868;&#x73B0;&#x51FA;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x7684;&#x7279;&#x6027;&#x3002;</p>
+<pre><code class="lang-python3">&gt;&gt;&gt; class MyInt(int):
+...     def __getitem__(self, key):
+...             return key+str(self)
+... 
+&gt;&gt;&gt; a = MyInt(1)
+&gt;&gt;&gt; b = MyInt(2)
+&gt;&gt;&gt; print(a+b)
+3
+&gt;&gt;&gt; a[&apos;key&apos;]
+&apos;key1&apos;
+</code></pre>
+<p>&#x2003;&#x2003;&#x770B;&#x4E0A;&#x53BB; <code>a[&apos;key&apos;]</code> &#x8FD9;&#x6837;&#x7684;&#x64CD;&#x4F5C;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;&#x4F3C;&#x4E8E; <code>dict</code> &#x8FD9;&#x6837;&#x7684;&#x5BF9;&#x8C61;&#x624D;&#x4F1A;&#x652F;&#x6301;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x4ECE; <code>int</code> &#x7EE7;&#x627F;&#x51FA;&#x6765;&#x7684; <code>MyInt</code> &#x5E94;&#x8BE5;&#x81EA;&#x7136;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x503C;&#x5BF9;&#x8C61;&#xFF0C;&#x4F46;&#x662F;&#x901A;&#x8FC7;&#x91CD;&#x5199; <code>__getitem__</code> &#x8FD9;&#x4E2A; Python &#x4E2D;&#x7684; special method,    &#x53EF;&#x4EE5;&#x89C6;&#x4E3A;&#x6307;&#x5B9A;&#x4E86; <code>MyInt</code> &#x5728; Python &#x5185;&#x90E8;&#x5BF9;&#x5E94;&#x7684; <code>PyTypeObject</code> &#x5BF9;&#x8C61;&#x7684; <code>tp_as_mapping.mp_subscript</code> &#x64CD;&#x4F5C;&#x3002;&#x6700;&#x7EC8;&#x7684;&#x7ED3;&#x679C;&#x662F; <code>MyInt</code>  &#x7684;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x201D;&#x8868;&#x73B0;&#x201C;&#x5F97;&#x50CF;&#x4E2A;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x4E00;&#x6837;&#x3002;&#x5F52;&#x6839;&#x7ED3;&#x5E95;&#x5C31;&#x5728;&#x4E8E; <code>PyTypeObject</code> &#x4E2D;&#x5141;&#x8BB8;&#x4E00;&#x79CD;&#x7C7B;&#x578B;&#x540C;&#x65F6;&#x6307;&#x5B9A;&#x4E09;&#x79CD;&#x4E0D;&#x540C;&#x5BF9;&#x8C61;&#x7684;&#x884C;&#x4E3A;&#x7279;&#x6027;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x68C0;&#x67E5;Python &#x4E2D; <code>int</code> &#x7C7B;&#x578B;&#x548C; <code>dict</code> &#x7C7B;&#x578B;&#x7684; <code>__getitem__</code> &#x5C5E;&#x6027;&#xFF1A;</p>
+<pre><code class="lang-python3">&gt;&gt;&gt; int.__getitem__
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+AttributeError: type object &apos;int&apos; has no attribute &apos;__getitem__&apos;
+&gt;&gt;&gt; dict.__getitem__
+&lt;method &apos;__getitem__&apos; of &apos;dict&apos; objects&gt;
+</code></pre>
+<blockquote>
+<p>special method &#x662F;&#x4E00;&#x79CD;&#x7531; Python &#x9690;&#x5F0F;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x7528;&#x6765;&#x5BF9;&#x67D0;&#x4E2A;&#x7C7B;&#x578B;&#x6267;&#x884C;&#x7279;&#x5B9A;&#x64CD;&#x4F5C;&#x4F8B;&#x5982;&#x76F8;&#x52A0;&#x7B49;&#x7B49;&#x3002;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x7684;&#x540D;&#x79F0;&#x7684;&#x9996;&#x5C3E;&#x90FD;&#x4E3A;&#x53CC;&#x4E0B;&#x5212;&#x7EBF;&#x3002;&#x8BE6;&#x89C1;&#xFF1A;<a href="https://docs.python.org/zh-cn/3/glossary.html#term-special-method" target="_blank">special method -- &#x7279;&#x6B8A;&#x65B9;&#x6CD5;</a></p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1.2.1 对象的创建.html" class="navigation navigation-prev " aria-label="Previous page: 1.2.1 对象的创建">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="1.2.3 类型的类型.html" class="navigation navigation-next " aria-label="Next page: 1.2.3 类型的类型">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.2.2 对象的行为","level":"1.2.2.2","depth":3,"next":{"title":"1.2.3 类型的类型","level":"1.2.2.3","depth":3,"path":"1.2.3 类型的类型.md","ref":"1.2.3 类型的类型.md","articles":[]},"previous":{"title":"1.2.1 对象的创建","level":"1.2.2.1","depth":3,"path":"1.2.1 对象的创建.md","ref":"1.2.1 对象的创建.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"1.2.2 对象的行为.md","mtime":"2022-07-28T13:31:52.836Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-07-28T15:45:04.703Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,544 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.2 类型对象 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="1.2.1 对象的创建.html" />
+    
+    
+    <link rel="prev" href="1.1.2 定长对象和变长对象.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="1 Python 对象初探.html">
+            
+                <a href="1 Python 对象初探.html">
+            
+                    
+                    1 Python 对象初探
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="1.1 Python 内的对象.html">
+            
+                <a href="1.1 Python 内的对象.html">
+            
+                    
+                    1.1 Python 内的对象
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="1.1.1 对象机制的基石——PyObject.html">
+            
+                <a href="1.1.1 对象机制的基石——PyObject.html">
+            
+                    
+                    1.1.1 对象机制的基石——PyObject
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="1.1.2 定长对象和变长对象.html">
+            
+                <a href="1.1.2 定长对象和变长对象.html">
+            
+                    
+                    1.1.2 定长对象和变长对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="1.2 类型对象.html">
+            
+                <a href="1.2 类型对象.html">
+            
+                    
+                    1.2 类型对象
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="1.2.1 对象的创建.html">
+            
+                <a href="1.2.1 对象的创建.html">
+            
+                    
+                    1.2.1 对象的创建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="1.2.2 对象的行为.html">
+            
+                <a href="1.2.2 对象的行为.html">
+            
+                    
+                    1.2.2 对象的行为
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="1.2.3 类型的类型.html">
+            
+                <a href="1.2.3 类型的类型.html">
+            
+                    
+                    1.2.3 类型的类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="1.3 Python对象的多态性.html">
+            
+                <a href="1.3 Python对象的多态性.html">
+            
+                    
+                    1.3 Python对象的多态性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="1.4 引用计数.html">
+            
+                <a href="1.4 引用计数.html">
+            
+                    
+                    1.4 引用计数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2 Python 中的整数对象int.html">
+            
+                <a href="2 Python 中的整数对象int.html">
+            
+                    
+                    2 Python 中的整数对象int
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >1.2 类型对象</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>&#xFEFF;# 1.2 &#x7C7B;&#x578B;&#x5BF9;&#x8C61;</p>
+<p>&#x2003;&#x2003;&#x5728;&#x4E0A;&#x9762;&#x7684;&#x63CF;&#x8FF0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x770B;&#x5230;&#x4E86; Python &#x4E2D;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x5171;&#x6709;&#x4FE1;&#x606F;&#x7684;&#x5B9A;&#x4E49;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x5F53;&#x5185;&#x5B58;&#x4E2D;&#x5B58;&#x5728;&#x67D0;&#x4E00;&#x4E2A; Python &#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x8BE5;&#x5BF9;&#x8C61;&#x5F00;&#x59CB;&#x7684;&#x51E0;&#x4E2A;&#x5B57;&#x8282;&#x7684;&#x542B;&#x4E49;&#x4E00;&#x5B9A;&#x4F1A;&#x7B26;&#x5408;&#x6211;&#x4EEC;&#x7684;&#x9884;&#x60F3;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x987A;&#x7740;&#x65F6;&#x95F4;&#x8F74;&#x8FFD;&#x6EAF;&#xFF0C;&#x5C31;&#x4F1A;&#x53D1;&#x73B0;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#x3002;&#x5F53;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x5206;&#x914D;&#x7A7A;&#x95F4;&#xFF0C;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6BEB;&#x65E0;&#x7591;&#x95EE;&#x5730;&#xFF0C;&#x5FC5;&#x987B;&#x8981;&#x77E5;&#x9053;&#x7533;&#x8BF7;&#x591A;&#x5927;&#x7684;&#x7A7A;&#x95F4;&#x3002;&#x663E;&#x7136;&#xFF0C;&#x8FD9;&#x4E0D;&#x4F1A;&#x662F;&#x4E00;&#x4E2A;&#x5B9A;&#x503C;&#xFF0C;&#x56E0;&#x4E3A;&#x4E0D;&#x540C;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x9700;&#x8981;&#x4E0D;&#x540C;&#x7684;&#x7A7A;&#x95F4;&#xFF0C;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#x5BF9;&#x8C61;&#x548C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x5BF9;&#x8C61;&#x6240;&#x9700;&#x7684;&#x7A7A;&#x95F4;&#x80AF;&#x5B9A;&#x4E0D;&#x540C;&#x3002;&#x90A3;&#x4E48;&#xFF0C;&#x5BF9;&#x8C61;&#x6240;&#x9700;&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x7684;&#x5927;&#x5C0F;&#x7684;&#x4FE1;&#x606F;&#x5230;&#x5E95;&#x5728;&#x54EA;&#x91CC;&#x5462;&#xFF1F; &#x663E;&#x7136;&#x5728; <code>PyObject</code> &#x4E2D;&#x6CA1;&#x6709;&#x8FD9;&#x6837;&#x7684;&#x4FE1;&#x606F;&#x3002;&#x5176;&#x5B9E;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x8BF4;&#x6CD5;&#x662F;&#x4E0D;&#x5BF9;&#x7684;&#xFF0C;&#x8FD9;&#x4E2A;&#x4FE1;&#x606F;&#x867D;&#x7136;&#x4E0D;&#x663E;&#x89C1;&#x4E8E; <code>PyObject</code> &#x7684;&#x5B9A;&#x4E49;&#x4E2D;&#xFF0C;&#x4F46;&#x5B83;&#x6070;&#x6070;&#x662F;&#x9690;&#x8EAB;&#x4E8E; <code>PyObject</code> &#x4E4B;&#x4E2D;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5B9E;&#x9645;&#x4E0A;, &#x5360;&#x7528;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x7684;&#x5927;&#x5C0F;&#x662F;&#x5BF9;&#x8C61;&#x7684;&#x4E00;&#x79CD;&#x5143;&#x4FE1;&#x606F;&#x3002;&#x8FD9;&#x6837;&#x7684;&#x5143;&#x4FE1;&#x606F;&#x662F;&#x4E0E;&#x5BF9;&#x8C61;&#x6240;&#x5C5E;&#x7C7B;&#x578B;&#x5BC6;&#x5207;&#x76F8;&#x5173;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x4E00;&#x5B9A;&#x4F1A;&#x51FA;&#x73B0;&#x5728;&#x4E0E;&#x5BF9;&#x8C61;&#x6240;&#x5BF9;&#x5E94;&#x7684;&#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x4E2D;&#x3002;&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6765;&#x8BE6;&#x7EC6;&#x8003;&#x5BDF;&#x4E00;&#x4E0B;&#x7C7B;&#x578B;&#x5BF9;&#x8C61; <code>PyTypeObject</code> &#xFF1A;</p>
+<p>&#x2003;&#x2003;<code>PyTypeObject</code> &#x662F; <code>struct _typeobject</code> &#x7684;&#x522B;&#x540D;&#xFF0C;&#x8FD9;&#x662F; Python&#x4E2D;&#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x7684;&#x57FA;&#x7C7B;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x7684;&#x5B9E;&#x73B0;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-c">[/Include/cpython/object.h]
+<span class="hljs-comment">// If this structure is modified, Doc/includes/typestruct.h should be updated</span>
+<span class="hljs-comment">// as well.</span>
+<span class="hljs-keyword">struct</span> _typeobject {
+    PyObject_VAR_HEAD
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *tp_name; <span class="hljs-comment">/* For printing, in format &quot;&lt;module&gt;.&lt;name&gt;&quot; */</span>
+    Py_ssize_t tp_basicsize, tp_itemsize; <span class="hljs-comment">/* For allocation */</span>
+
+    <span class="hljs-comment">/* Methods to implement standard operations */</span>
+
+    destructor tp_dealloc;
+    Py_ssize_t tp_vectorcall_offset;
+    getattrfunc tp_getattr;
+    setattrfunc tp_setattr;
+    PyAsyncMethods *tp_as_async; <span class="hljs-comment">/* formerly known as tp_compare (Python 2)
+                                    or tp_reserved (Python 3) */</span>
+    reprfunc tp_repr;
+
+    <span class="hljs-comment">/* Method suites for standard classes */</span>
+
+    PyNumberMethods *tp_as_number;
+    PySequenceMethods *tp_as_sequence;
+    PyMappingMethods *tp_as_mapping;
+
+    <span class="hljs-comment">/* More standard operations (here for binary compatibility) */</span>
+
+    hashfunc tp_hash;
+    ternaryfunc tp_call;
+    reprfunc tp_str;                                                            
+    getattrofunc tp_getattro;
+    setattrofunc tp_setattro;
+
+    <span class="hljs-comment">/* Functions to access object as input/output buffer */</span>
+    PyBufferProcs *tp_as_buffer;
+
+    <span class="hljs-comment">/* Flags to define presence of optional/expanded features */</span>
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> tp_flags;
+
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *tp_doc; <span class="hljs-comment">/* Documentation string */</span>
+
+    <span class="hljs-comment">/* Assigned meaning in release 2.0 */</span>
+    <span class="hljs-comment">/* call function for all accessible objects */</span>
+    traverseproc tp_traverse;
+
+    <span class="hljs-comment">/* delete references to contained objects */</span>
+    inquiry tp_clear;
+
+    <span class="hljs-comment">/* Assigned meaning in release 2.1 */</span>
+    <span class="hljs-comment">/* rich comparisons */</span>
+    richcmpfunc tp_richcompare;
+
+    <span class="hljs-comment">/* weak reference enabler */</span>
+    Py_ssize_t tp_weaklistoffset;
+
+    <span class="hljs-comment">/* Iterators */</span>
+    getiterfunc tp_iter;
+    iternextfunc tp_iternext;
+
+    <span class="hljs-comment">/* Attribute descriptor and subclassing stuff */</span>
+    PyMethodDef *tp_methods;
+    PyMemberDef *tp_members;
+    PyGetSetDef *tp_getset;
+    <span class="hljs-comment">// Strong reference on a heap type, borrowed reference on a static type</span>
+    PyTypeObject *tp_base;
+    PyObject *tp_dict;
+    descrgetfunc tp_descr_get;
+    descrsetfunc tp_descr_set;
+    Py_ssize_t tp_dictoffset;
+    initproc tp_init;
+    allocfunc tp_alloc;
+    newfunc tp_new;                                                             
+    freefunc tp_free; <span class="hljs-comment">/* Low-level free-memory routine */</span>
+    inquiry tp_is_gc; <span class="hljs-comment">/* For PyObject_IS_GC */</span>
+    PyObject *tp_bases;
+    PyObject *tp_mro; <span class="hljs-comment">/* method resolution order */</span>
+    PyObject *tp_cache;
+    PyObject *tp_subclasses;
+    PyObject *tp_weaklist;
+    destructor tp_del;
+
+    <span class="hljs-comment">/* Type attribute cache version tag. Added in version 2.6 */</span>
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> tp_version_tag;
+
+    destructor tp_finalize;
+    vectorcallfunc tp_vectorcall;
+};
+</code></pre>
+<p>&#x2003;&#x2003;&#x4E5F;&#x8BB8; Python &#x5BF9;&#x8C61;&#x7CFB;&#x7EDF;&#x4E2D;&#x6700;&#x91CD;&#x8981;&#x7684;&#x7ED3;&#x6784;&#x4E4B;&#x4E00;&#x5C31;&#x662F;&#x5B9A;&#x4E49;&#x65B0;&#x7C7B;&#x578B;&#x7684;&#x7ED3;&#x6784;: PyTypeObject &#x7ED3;&#x6784;&#x3002; &#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EFB;&#x4F55; PyObject<em>* &#x6216; PyType</em>* &#x51FD;&#x6570;&#x6765;&#x5904;&#x7406;&#xFF0C;&#x4F46;&#x4E0D;&#x80FD;&#x63D0;&#x4F9B;&#x5927;&#x591A;&#x6570; Python &#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6240;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x5185;&#x5BB9;&#x3002; &#x8FD9;&#x4E9B;&#x5BF9;&#x8C61;&#x662F;&#x5BF9;&#x8C61;&#x884C;&#x4E3A;&#x7684;&#x57FA;&#x7840;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x4EEC;&#x5BF9;&#x89E3;&#x91CA;&#x5668;&#x672C;&#x8EAB;&#x6216;&#x4EFB;&#x4F55;&#x5B9E;&#x73B0;&#x65B0;&#x7C7B;&#x578B;&#x7684;&#x6269;&#x5C55;&#x6A21;&#x5757;&#x90FD;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x4E0E;&#x5927;&#x591A;&#x6570;&#x6807;&#x51C6;&#x7C7B;&#x578B;&#x76F8;&#x6BD4;&#xFF0C;&#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x76F8;&#x5F53;&#x5927;&#x3002;&#x8FD9;&#x4E48;&#x5927;&#x7684;&#x539F;&#x56E0;&#x662F;&#x6BCF;&#x4E2A;&#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x5B58;&#x50A8;&#x4E86;&#x5927;&#x91CF;&#x7684;&#x503C;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x662F;C&#x51FD;&#x6570;&#x6307;&#x9488;&#xFF0C;&#x6BCF;&#x4E2A;&#x6307;&#x9488;&#x5B9E;&#x73B0;&#x4E86;&#x7C7B;&#x578B;&#x529F;&#x80FD;&#x7684;&#x4E00;&#x5C0F;&#x90E8;&#x5206;&#x3002;&#x672C;&#x8282;&#x5C06;&#x8BE6;&#x7EC6;&#x63CF;&#x8FF0;&#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x7684;&#x5B57;&#x6BB5;&#x3002;&#x8FD9;&#x4E9B;&#x5B57;&#x6BB5;&#x5C06;&#x6309;&#x7167;&#x5B83;&#x4EEC;&#x5728;&#x7ED3;&#x6784;&#x4E2D;&#x51FA;&#x73B0;&#x7684;&#x987A;&#x5E8F;&#x8FDB;&#x884C;&#x63CF;&#x8FF0;&#x3002;</p>
+<blockquote>
+<p>&#x8BE6;&#x89C1; <a href="https://docs.python.org/zh-cn/3/c-api/typeobj.html?highlight=pytypeobject" target="_blank">&#x7C7B;&#x578B;&#x5BF9;&#x8C61;</a></p>
+</blockquote>
+<p>&#x2003;&#x2003;&#x5728; <code>PyTypeObject</code> &#x7684;&#x5B9A;&#x4E49;&#x4E2D;&#x5305;&#x542B;&#x8BB8;&#x591A;&#x4FE1;&#x606F;&#xFF0C;&#x4E3B;&#x8981;&#x5206;&#x7C7B;&#x4EE5;&#x4E0B;&#x51E0;&#x7C7B;:</p>
+<ol>
+<li>&#x7C7B;&#x578B;&#x540D;, <code>tp_name</code>, &#x4E3B;&#x8981;&#x7528;&#x4E8E; Python &#x5185;&#x90E8;&#x8C03;&#x8BD5;&#x7528;</li>
+<li>&#x521B;&#x5EFA;&#x8BE5;&#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x65F6;&#x5206;&#x914D;&#x7684;&#x7A7A;&#x95F4;&#x5927;&#x5C0F;&#x4FE1;&#x606F;&#xFF0C;&#x5373; <code>tp_basicsize</code> &#x548C; <code>tp_itemsize</code></li>
+<li>&#x4E0E;&#x8BE5;&#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x76F8;&#x5173;&#x7684;&#x64CD;&#x4F5C;&#x4FE1;&#x606F;(&#x5982; <code>tp_print</code> &#x8FD9;&#x6837;&#x7684;&#x51FD;&#x6570;&#x6307;&#x9488;)</li>
+<li>&#x4E00;&#x4E9B;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;</li>
+</ol>
+<p>&#x2003;&#x2003;&#x5BF9;&#x8C61;&#x7684;&#x7C7B;&#x578B;&#x662F;&#x7531;&#x8BE5;&#x5BF9;&#x8C61;&#x6307;&#x5411;&#x7684; &#x7C7B;&#x578B;&#x5BF9;&#x8C61; &#x51B3;&#x5B9A;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x7684;&#x7C7B;&#x578B;&#x662F;&#x7531;&#x8C01;&#x51B3;&#x5B9A;&#x7684;&#x5462;&#xFF1F; &#x5BF9;&#x4E8E;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E0E;&#x5176;&#x5173;&#x8054;&#x7684;&#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x786E;&#x5B9A;&#x5176;&#x7C7B;&#x578B;&#xFF0C;&#x90A3;&#x4E48;&#x901A;&#x8FC7;&#x4EC0;&#x4E48;&#x6765;&#x786E;&#x5B9A;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x662F;&#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x5462;&#xFF1F; &#x7B54;&#x6848;&#x5C31;&#x662F; <code>PyType_Type</code>&#x3002;</p>
+<p>&#x2003;&#x2003;<code>PyType_Type</code> &#x5728;&#x7C7B;&#x578B;&#x673A;&#x5236;&#x4E2D;&#x81F3;&#x5173;&#x91CD;&#x8981;&#xFF0C;&#x6240;&#x6709;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49; <code>class</code> &#x6240; &#x5BF9;&#x5E94;&#x7684; <code>PyTypeObject</code> &#x5BF9;&#x8C61;&#x90FD;&#x662F;&#x901A;&#x8FC7; <code>PyType_Type</code> &#x521B;&#x5EFA;&#x7684;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x4E00;&#x4E2A; <code>PyTypeObject</code> &#x5BF9;&#x8C61;&#x5C31;&#x662F; Python &#x4E2D;&#x5BF9;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7406;&#x8BBA;&#x4E2D;&#x201C;&#x7C7B;&#x201D;&#x8FD9;&#x4E2A;&#x6982;&#x5FF5;&#x7684;&#x5B9E;&#x73B0;&#x3002;</p>
+<pre><code class="lang-c">[/Objects/tpeobject.c]
+PyTypeObject PyType_Type = {
+    PyVarObject_HEAD_INIT(&amp;PyType_Type, <span class="hljs-number">0</span>)
+    <span class="hljs-string">&quot;type&quot;</span>,                                     <span class="hljs-comment">/* tp_name */</span>
+    <span class="hljs-keyword">sizeof</span>(PyHeapTypeObject),                   <span class="hljs-comment">/* tp_basicsize */</span>
+    <span class="hljs-keyword">sizeof</span>(PyMemberDef),                        <span class="hljs-comment">/* tp_itemsize */</span>
+    (destructor)type_dealloc,                   <span class="hljs-comment">/* tp_dealloc */</span>
+    offsetof(PyTypeObject, tp_vectorcall),      <span class="hljs-comment">/* tp_vectorcall_offset */</span>
+    <span class="hljs-number">0</span>,                                          <span class="hljs-comment">/* tp_getattr */</span>
+    <span class="hljs-number">0</span>,                                          <span class="hljs-comment">/* tp_setattr */</span>
+    <span class="hljs-number">0</span>,                                          <span class="hljs-comment">/* tp_as_async */</span>
+    (reprfunc)type_repr,                        <span class="hljs-comment">/* tp_repr */</span>
+    &amp;type_as_number,                            <span class="hljs-comment">/* tp_as_number */</span>
+    <span class="hljs-number">0</span>,                                          <span class="hljs-comment">/* tp_as_sequence */</span>
+    <span class="hljs-number">0</span>,                                          <span class="hljs-comment">/* tp_as_mapping */</span>
+    <span class="hljs-number">0</span>,                                          <span class="hljs-comment">/* tp_hash */</span>
+    (ternaryfunc)type_call,                     <span class="hljs-comment">/* tp_call */</span>
+    <span class="hljs-number">0</span>,                                          <span class="hljs-comment">/* tp_str */</span>
+    (getattrofunc)type_getattro,                <span class="hljs-comment">/* tp_getattro */</span>
+    (setattrofunc)type_setattro,                <span class="hljs-comment">/* tp_setattro */</span>
+    <span class="hljs-number">0</span>,                                          <span class="hljs-comment">/* tp_as_buffer */</span>
+    Py_TPFLAGS_DEFAULT | Py_TPFLAGS_HAVE_GC |                                   
+    Py_TPFLAGS_BASETYPE | Py_TPFLAGS_TYPE_SUBCLASS |
+    Py_TPFLAGS_HAVE_VECTORCALL,                 <span class="hljs-comment">/* tp_flags */</span>
+    type_doc,                                   <span class="hljs-comment">/* tp_doc */</span>
+    (traverseproc)type_traverse,                <span class="hljs-comment">/* tp_traverse */</span>
+    (inquiry)type_clear,                        <span class="hljs-comment">/* tp_clear */</span>
+    <span class="hljs-number">0</span>,                                          <span class="hljs-comment">/* tp_richcompare */</span>
+    offsetof(PyTypeObject, tp_weaklist),        <span class="hljs-comment">/* tp_weaklistoffset */</span>
+    <span class="hljs-number">0</span>,                                          <span class="hljs-comment">/* tp_iter */</span>
+    <span class="hljs-number">0</span>,                                          <span class="hljs-comment">/* tp_iternext */</span>
+    type_methods,                               <span class="hljs-comment">/* tp_methods */</span>
+    type_members,                               <span class="hljs-comment">/* tp_members */</span>
+    type_getsets,                               <span class="hljs-comment">/* tp_getset */</span>
+    <span class="hljs-number">0</span>,                                          <span class="hljs-comment">/* tp_base */</span>
+    <span class="hljs-number">0</span>,                                          <span class="hljs-comment">/* tp_dict */</span>
+    <span class="hljs-number">0</span>,                                          <span class="hljs-comment">/* tp_descr_get */</span>
+    <span class="hljs-number">0</span>,                                          <span class="hljs-comment">/* tp_descr_set */</span>
+    offsetof(PyTypeObject, tp_dict),            <span class="hljs-comment">/* tp_dictoffset */</span>
+    type_init,                                  <span class="hljs-comment">/* tp_init */</span>
+    <span class="hljs-number">0</span>,                                          <span class="hljs-comment">/* tp_alloc */</span>
+    type_new,                                   <span class="hljs-comment">/* tp_new */</span>
+    PyObject_GC_Del,                            <span class="hljs-comment">/* tp_free */</span>
+    (inquiry)type_is_gc,                        <span class="hljs-comment">/* tp_is_gc */</span>
+    .tp_vectorcall = type_vectorcall,
+};
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1.1.2 定长对象和变长对象.html" class="navigation navigation-prev " aria-label="Previous page: 1.1.2 定长对象和变长对象">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="1.2.1 对象的创建.html" class="navigation navigation-next " aria-label="Next page: 1.2.1 对象的创建">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.2 类型对象","level":"1.2.2","depth":2,"next":{"title":"1.2.1 对象的创建","level":"1.2.2.1","depth":3,"path":"1.2.1 对象的创建.md","ref":"1.2.1 对象的创建.md","articles":[]},"previous":{"title":"1.1.2 定长对象和变长对象","level":"1.2.1.2","depth":3,"path":"1.1.2 定长对象和变长对象.md","ref":"1.1.2 定长对象和变长对象.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"1.2 类型对象.md","mtime":"2022-07-28T13:25:25.340Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-07-28T15:45:04.703Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
